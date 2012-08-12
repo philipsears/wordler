@@ -1,4 +1,5 @@
-out
-target
-project
+.idea
+./out
+./target
+./project
 wordler.iml
