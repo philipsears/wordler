@@ -1,5 +1,5 @@
 .idea
-./out
-./target
-./project
+out
+target
+project
 wordler.iml
