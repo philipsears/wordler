@@ -23,9 +23,6 @@ object WordlerConfig {
   def maxChars = 12
 
   // Determines whether verbose debugging is on
-  def debug = false
-
-  // Determines whether verbose info is on
-  def info = false
+  def debug = true
 
 }

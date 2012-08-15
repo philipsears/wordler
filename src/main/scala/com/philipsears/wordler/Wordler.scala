@@ -4,14 +4,22 @@ package com.philipsears.wordler
  * User: phils
  * Date: 8/9/12
  *
- * This is the "Main" Worlder class
+ * This is the "Main" Wordler class
+ * The main steps are:
+ *  a) Read and load dictionary
+ *  b) Loop on the worlder user process:
+ *     i. Read user input of characters from console
+ *    ii. Find all permutations and combinations of characters
+ *    iii. If a permutation/combination exists in dictionary, display to user
  */
 
 object Wordler {
 
+  // function to parse the user input
   def parseStrInput(input: String): String = input.replaceAll(",","").replaceAll(" ","").toLowerCase
 
   def main(args: Array[String]) {
+    // Read and load the complete dictionary
     var dictionary = new HashDictionary()
     do {
         var startTime = System.currentTimeMillis()
@@ -36,8 +44,8 @@ object Wordler {
               val nextWord = permIter.next
               count = count + 1
               val word = nextWord.mkString
-              Debugger.debug("debug next word "+word)
               if (dictionary.containsWord(word)) {
+                // The dictionary contains the word, so display it to user!
                 println(word)
               }
             }

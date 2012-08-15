@@ -5,6 +5,9 @@ package com.philipsears.wordler
  * Date: 8/9/12
  */
 class HashDictionary() extends Dictionary {
+  protected val dictionaryHash = new scala.collection.mutable.HashMap[String,Int]()
+
+  readDicFile(this)
 
   def containsWord(w: String) = dictionaryHash.contains(w)
 
