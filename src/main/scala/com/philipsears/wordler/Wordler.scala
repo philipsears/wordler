@@ -25,6 +25,7 @@ object Wordler {
         var startTime = System.currentTimeMillis()
         print("Please enter the characters (from 3 to "+WordlerConfig.maxChars+" in length):");
         var charstr = parseStrInput(readLine())
+        if (charstr == "q") return
         while(charstr.size < 3 || charstr.size > WordlerConfig.maxChars) {
           println("The input was "+charstr.size+" BUT must be from 3 to "+WordlerConfig.maxChars+" in length!");
           print("Please re-enter characters:");
