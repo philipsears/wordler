@@ -4,7 +4,7 @@ package com.philipsears.wordler
 /**
  * User: phils
  * Date: 8/14/12
- * This is the brute force non-optimal example of a dictionary
+ * This is the brute force NON-OPTIMAL example of a dictionary
  * This should ONLY be used as a reference example and not for optimal playing :(
  */
 class ListDictionary() extends Dictionary {

@@ -9,6 +9,9 @@ package com.philipsears.wordler
  */
 object WordlerConfig {
 
+  // Determines which dictionary implementation to use
+  def dictionaryType = "HashDictionary"
+
   //The path to the dictionary file on your local machine.
    //The text file should contain one word per line in lower case
   def dictionaryPath = "/Users/phils/Documents/en-US.dic"

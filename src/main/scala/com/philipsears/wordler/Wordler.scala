@@ -20,13 +20,13 @@ object Wordler {
 
   def main(args: Array[String]) {
     // Read and load the complete dictionary
-    var dictionary = new HashDictionary()
+    var dictionary = loadDictionary(WordlerConfig.dictionaryType)
     do {
         var startTime = System.currentTimeMillis()
-        print("Please enter the characters (from 3 to "+WordlerConfig.maxChars+" in length):");
+        print("Please enter the characters (from 4 to "+WordlerConfig.maxChars+" in length):");
         var charstr = parseStrInput(readLine())
         if (charstr == "q") return
-        while(charstr.size < 3 || charstr.size > WordlerConfig.maxChars) {
+        while(charstr.size < 4 || charstr.size > WordlerConfig.maxChars) {
           println("The input was "+charstr.size+" BUT must be from 3 to "+WordlerConfig.maxChars+" in length!");
           print("Please re-enter characters:");
           charstr = parseStrInput(readLine())
@@ -58,5 +58,10 @@ object Wordler {
     } while (true)
   }
 
+  def loadDictionary(dictionaryType: String): Dictionary = dictionaryType match {
+    case "ListDictionary" => new ListDictionary()
+    case "HashDictionary" => new HashDictionary()
+    case _ => new HashDictionary()
+  }
 }
 
